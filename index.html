@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Inline Containers with Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: background-color 0.3s;
+            flex: 1 1 auto;
+            max-width: 200px;
+            min-width: 150px;
+            word-wrap: break-word; /* Ensure text breaks into multiple lines */
+        }
+
+        .container:focus-within {
+            background-color: #ffeb3b;
+        }
+
+        .name-link {
+            text-decoration: none;
+            color: #8b0000; /* Dark red color */
+            font-size: 1.5em;
+            font-weight: bold;
+            transition: color 0.3s;
+            display: block;
+            word-break: break-word; /* Ensure long words break into multiple lines */
+        }
+
+        .name-link:hover {
+            color: #b22222; /* Lighter shade of dark red */
+        }
+
+        @media (max-width: 768px) {
+            .name-link {
+                font-size: 1.2em;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .name-link {
+                font-size: 1em;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <a href="https://www.example1.com" target="_blank" class="name-link">Avengers Age Of Ultron</a>
+        </div>
+        <div class="container">
+            <a href="https://www.example2.com" target="_blank" class="name-link">Name 2</a>
+        </div>
+        <div class="container">
+            <a href="https://www.example3.com" target="_blank" class="name-link">Name 3</a>
+        </div>
+        <div class="container">
+            <a href="https://www.example4.com" target="_blank" class="name-link">Name 4</a>
+        </div>
+        <div class="container">
+            <a href="https://www.example5.com" target="_blank" class="name-link">Name 5</a>
+        </div>
+    </div>
+</body>
+</html>
