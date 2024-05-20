@@ -59,14 +59,14 @@
 
         .container {
             background-color: #ffffff;
-            padding: 20px;
+            padding: 10px; /* Reduced padding */
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: background-color 0.3s;
             flex: 1 1 auto;
-            max-width: 200px;
-            min-width: 150px;
+            max-width: 150px; /* Reduced max-width */
+            min-width: 120px; /* Reduced min-width */
             word-wrap: break-word;
         }
 
@@ -77,7 +77,7 @@
         .name-link {
             text-decoration: none;
             color: #8b0000; /* Dark red color */
-            font-size: 1.5em;
+            font-size: 1em; /* Reduced font size */
             font-weight: bold;
             transition: color 0.3s;
             display: block;
@@ -90,21 +90,21 @@
 
         @media (max-width: 768px) {
             .name-link {
-                font-size: 1.2em;
+                font-size: 0.9em; /* Further reduced font size */
             }
 
             .container {
-                padding: 15px;
+                padding: 8px; /* Further reduced padding */
             }
         }
 
         @media (max-width: 480px) {
             .name-link {
-                font-size: 1em;
+                font-size: 0.8em; /* Further reduced font size */
             }
 
             .container {
-                padding: 10px;
+                padding: 6px; /* Further reduced padding */
             }
         }
     </style>
