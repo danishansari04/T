@@ -3,18 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Inline Containers with Links</title>
+    <title>Responsive Inline Containers with Links and Search</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #000000;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
+            color: #ffffff;
+        }
+
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .search-icon {
+            cursor: pointer;
+            font-size: 24px;
+            margin-right: 10px;
+            display: block;
+        }
+
+        .search-box {
+            display: none;
+            width: 200px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-box input {
+            width: calc(100% - 10px);
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
         }
 
         .wrapper {
@@ -22,6 +54,7 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
+            width: 100%;
         }
 
         .container {
@@ -34,7 +67,7 @@
             flex: 1 1 auto;
             max-width: 200px;
             min-width: 150px;
-            word-wrap: break-word; /* Ensure text breaks into multiple lines */
+            word-wrap: break-word;
         }
 
         .container:focus-within {
@@ -48,7 +81,7 @@
             font-weight: bold;
             transition: color 0.3s;
             display: block;
-            word-break: break-word; /* Ensure long words break into multiple lines */
+            word-break: break-word;
         }
 
         .name-link:hover {
@@ -77,9 +110,15 @@
     </style>
 </head>
 <body>
+    <div class="search-container">
+        <span class="search-icon" onclick="toggleSearchBox()">🔍</span>
+        <div class="search-box" id="searchBox">
+            <input type="text" id="searchInput" placeholder="Search..." oninput="search()">
+        </div>
+    </div>
     <div class="wrapper">
         <div class="container">
-            <a href="https://www.example1.com" target="_blank" class="name-link">Avengers Age Of Ultron</a>
+            <a href="https://www.example1.com" target="_blank" class="name-link">gdisoehvgdyueShheisiiehhhe</a>
         </div>
         <div class="container">
             <a href="https://www.example2.com" target="_blank" class="name-link">Name 2</a>
@@ -94,5 +133,38 @@
             <a href="https://www.example5.com" target="_blank" class="name-link">Name 5</a>
         </div>
     </div>
+
+    <script>
+        function toggleSearchBox() {
+            var searchBox = document.getElementById('searchBox');
+            var searchIcon = document.querySelector('.search-icon');
+            if (searchBox.style.display === 'block') {
+                searchBox.style.display = 'none';
+                searchIcon.style.display = 'block';
+            } else {
+                searchBox.style.display = 'block';
+                searchIcon.style.display = 'none';
+                document.getElementById('searchInput').focus();
+            }
+        }
+
+        function search() {
+            var input, filter, containers, container, links, link, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            containers = document.getElementsByClassName("container");
+            
+            for (i = 0; i < containers.length; i++) {
+                container = containers[i];
+                links = container.querySelector(".name-link");
+                txtValue = links.textContent || links.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    container.style.display = "";
+                } else {
+                    container.style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
