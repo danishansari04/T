@@ -190,12 +190,13 @@
 
         document.getElementById('player-form').addEventListener('submit', function(event) {
             event.preventDefault();
-            
+
             const link = document.getElementById('link').value;
+            const currentHost = window.location.host;
 
             // Generate the iframe embed code
-            const iframeCode = `<iframe src="https://your-website.com/plyr?link=${encodeURIComponent(link)}" width="640" height="360" frameborder="0" allowfullscreen></iframe>`;
-            const watchLink = `https://your-website.com/plyr?link=${encodeURIComponent(link)}`;
+            const iframeCode = `<iframe src="https://${currentHost}/plyr?link=${encodeURIComponent(link)}" width="640" height="360" frameborder="0" allowfullscreen></iframe>`;
+            const watchLink = `https://${currentHost}/plyr?link=${encodeURIComponent(link)}`;
 
             document.getElementById('embed-code').value = iframeCode;
             document.getElementById('watch-link').value = watchLink;
