@@ -1,92 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fluid Video Player</title>
-    <link href="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.css" rel="stylesheet"> <!-- Link to external Fluid Player CSS file -->
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-        .video-container {
-            position: fixed;
-            width: 100.5%;
-            height: 100.5%;
-            margin: -1px;
-        }
-        .video-container video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        #input-wrapper {
-            display: block;
-        }
-    </style>
-</head>
-<body>
-    <div id="input-wrapper">
-        <input type="text" id="video-link" placeholder="Enter video link...">
-        <button onclick="loadVideo()">Load Video</button>
-    </div>
-    <div class="video-container" id="video-container" style="display: none;">
-        <!-- Video link display will be added dynamically -->
-        <video id="my-video" class="video-player" controls>
-            <!-- Video source will be added dynamically -->
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script> <!-- Link to external Fluid Player JavaScript file -->
-    <script>
-        function loadVideo() {
-            var videoLink = document.getElementById('video-link').value;
-            var videoContainer = document.getElementById('video-container');
-            var inputWrapper = document.getElementById('input-wrapper');
+Avengersdanish
 
-            // Check if the video link is provided
-            if (videoLink.trim() !== '') {
-                // Hide input wrapper
-                inputWrapper.style.display = 'none';
 
-                // Show video container
-                videoContainer.style.display = 'block';
+https://drive.google.com/file/d/1os-KW_Opcz7H0QDuPuewZ_S3A95pRAlc/view?usp=drivesdk
 
-                // Load video
-                var videoPlayer = fluidPlayer('my-video', {
-                    layoutControls: {
-                        primaryColor: '#000000',
-                        posterImage: ''
-                    },
-                    vastOptions: {
-                        adList: []
-                    }
-                });
+https://drive.google.com/file/d/1fBjkEFBMu3A4mukSVJ4hwRcwgI8qqdpL/view?usp=drivesdk
 
-                // Set video source
-                var videoElement = document.getElementById('my-video');
-                videoElement.src = videoLink;
 
-                // Update URL query parameter
-                var queryParams = new URLSearchParams(window.location.search);
-                queryParams.set('link', videoLink);
-                window.history.replaceState({}, '', window.location.pathname + '?' + queryParams.toString());
-            }
-        }
 
-        // Check if there's a video link in the URL query parameter on page load
-        window.onload = function() {
-            var urlParams = new URLSearchParams(window.location.search);
-            var videoLink = urlParams.get('link');
-            if (videoLink) {
-                document.getElementById('video-link').value = videoLink;
-                loadVideo();
-            }
-        };
-    </script>
-</body>
-</html>
+https://drive.google.com/file/d/1v3-9UpiYm5ZBi8_mItttNUCzODwieW74/view?usp=drivesdk
+
+https://drive.google.com/file/d/1ISX-GDCkKr7GKFJs7QXD4bwDStu7EZBJ/view?usp=drivesdk
+
+https://drive.google.com/file/d/1wwVx3ti_RCz6i2flUY0y-ZxM3TcRHRQ6/view?usp=drivesdk
+
+https://drive.google.com/file/d/1-JmqZJaljVmq4HoLM1dGtbcTX_1Wmraf/view?usp=drivesdk
+
+https://drive.google.com/file/d/1RmIG5KOitQ_NcuUnoyxIHZ7dnKyd0f_H/view?usp=drivesdk
+
+
+https://drive.google.com/file/d/19rm-3nOum-vnXrtRtZ67nitsdxCLOll0/view?usp=drivesdk
+
+
+
+https://drive.google.com/file/d/1ur_UoQfEYMYoJ57GDJ_iqYHIKL-wzwXf/view?usp=drivesdk
+
+
+https://drive.google.com/file/d/1xzv2NHxjpfBRc95XQ0IjgzmavawuPX7L/view?usp=drivesdk
+
+
+https://drive.google.com/file/d/1yIn3jgKnbyZoDBIPkqPlum1f_lSAfW8e/view?usp=drivesdk
+
+
+https://drive.google.com/file/d/1_jjGGyG4FEAyhnrqqb9MdDAOGUVRfSqJ/view?usp=drivesdk
