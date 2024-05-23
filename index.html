@@ -7,15 +7,14 @@
     <link href="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.css" rel="stylesheet"> <!-- Link to external Fluid Player CSS file -->
     <style>
         body, html {
-            margin: 0px;
-            padding: 0px;
+            margin: 0;
+            padding: 0;
             height: 100%;
         }
         .video-container {
             position: absolute;
             width: 100%;
             height: 100%;
-            margin: -1px;
         }
         .video-container video {
             position: absolute;
@@ -75,18 +74,21 @@
                 var queryParams = new URLSearchParams(window.location.search);
                 queryParams.set('link', videoLink);
                 window.history.replaceState({}, '', window.location.pathname + '?' + queryParams.toString());
+
+                // Automatically go full screen after 3 seconds
+                setTimeout(function() {
+                    if (videoElement.requestFullscreen) {
+                        videoElement.requestFullscreen();
+                    } else if (videoElement.mozRequestFullScreen) {
+                        videoElement.mozRequestFullScreen();
+                    } else if (videoElement.webkitRequestFullscreen) {
+                        videoElement.webkitRequestFullscreen();
+                    } else if (videoElement.msRequestFullscreen) {
+                        videoElement.msRequestFullscreen();
+                    }
+                }, 3000);
             }
         }
-
-        // Check if there's a video link in the URL query parameter on page load
-        window.onload = function() {
-            var urlParams = new URLSearchParams(window.location.search);
-            var videoLink = urlParams.get('link');
-            if (videoLink) {
-                document.getElementById('video-link').value = videoLink;
-                loadVideo();
-            }
-        };
     </script>
 </body>
 </html>
