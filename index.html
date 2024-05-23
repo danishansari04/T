@@ -76,6 +76,16 @@
                 window.history.replaceState({}, '', window.location.pathname + '?' + queryParams.toString());
             }
         }
+
+        // Check if there's a video link in the URL query parameter on page load
+        window.onload = function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var videoLink = urlParams.get('link');
+            if (videoLink) {
+                document.getElementById('video-link').value = videoLink;
+                loadVideo();
+            }
+        };
     </script>
 </body>
 </html>
